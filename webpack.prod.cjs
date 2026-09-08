@@ -13,7 +13,14 @@ module.exports = merge(common, {
     usedExports: true,
     minimizer: [
       new TerserJSPlugin({
-        terserOptions: { compress: true, mangle: { properties: true } },
+        terserOptions: {
+          compress: true,
+          mangle: {
+            properties: {
+              reserved: ["easy", "medium", "hard"],
+            },
+          },
+        },
       }),
       new HtmlMinimizerPlugin({minimizerOptions: { minifyJS: false}})
     ],

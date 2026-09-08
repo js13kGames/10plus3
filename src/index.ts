@@ -9,7 +9,7 @@
 */
 
 
-import { setCanvasPixelated, vec2, Sound, drawText, engineInit, Color, keyWasPressed, setShowWatermark, drawRect } from "littlejsengine";
+import { setCanvasPixelated, setGlEnable, vec2, Sound, drawText, engineInit, Color, keyWasPressed, setShowWatermark, drawRect } from "littlejsengine";
 import { startGameRound } from "./helpers";
 import { GameRound, Operation, OPERATION_TYPE } from "./types";
 import { COLOR_PALETTE, DIFFICULTY, GAME_STATE } from "./constants";
@@ -17,6 +17,7 @@ import { renderBackground, renderInstructions, renderLevel, renderMaxLevel } fro
 
 // do not use pixelated rendering
 setCanvasPixelated(false);
+setGlEnable(false);
 // remove watermark
 setShowWatermark(false);
 
@@ -199,5 +200,5 @@ function gameRenderPost(){}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Startup LittleJS Engine
-engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost);
+engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, []);
 
