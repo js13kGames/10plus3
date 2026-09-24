@@ -1,4 +1,7 @@
 ---
+genres:
+  - puzzle
+  - educational
 directors_cut: https://10plus3-js13k.surge.sh
 # See github.com/js13kGames/hello-world for supported frontmatter
 ---
